@@ -48,6 +48,12 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: 0.2s;
+
+    &:active,
+    &:focus {
+      color: $c-purple;
+    }
   }
 
   svg {
