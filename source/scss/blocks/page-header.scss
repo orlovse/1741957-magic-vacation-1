@@ -5,6 +5,8 @@
   right: 0;
   padding: 2.7rem 0;
   z-index: 10;
+  opacity: 0;
+  transition: opacity cubic-bezier(.45, .51, .01, .9) 0.7s;
 
   @media (min-width: $stop-scaling) {
     padding: 27px 0;
@@ -16,6 +18,17 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     padding: 0.9rem 0;
+  }
+}
+
+.loaded {
+  .page-header {
+    opacity: 1;
+
+    .page-header__logo {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -35,6 +48,9 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform cubic-bezier(.45, .51, .01, .9) 0.5s, opacity cubic-bezier(.45, .51, .01, .9) 0.5s;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -250,8 +266,8 @@
       width: 0;
       height: 2px;
       background-color: $c-light;
-      left: 0;
-      transition: all 0.3s;
+      right: 0;
+      transition: width 0.3s ease;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -279,6 +295,8 @@
 
       &::after {
         width: 100%;
+        right: auto;
+        left: 0;
         opacity: 1;
         background-color: $c-purple;
       }
