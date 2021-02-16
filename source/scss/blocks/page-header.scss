@@ -6,6 +6,7 @@
   padding: 2.7rem 0;
   z-index: 10;
   opacity: 0;
+  transition: opacity 0.7s;
 
   @media (min-width: $stop-scaling) {
     padding: 27px 0;
@@ -37,6 +38,8 @@
   width: 10rem;
   color: $c-light;
   transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
