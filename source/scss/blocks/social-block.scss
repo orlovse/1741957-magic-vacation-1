@@ -6,6 +6,19 @@
       opacity: 1;
       pointer-events: auto;
     }
+
+    li {
+      opacity: 1;
+      transform: translateY(0);
+
+      &:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.4s;
+      }
+    }
   }
 }
 
@@ -62,7 +75,7 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
+    &+.social-block__list {
       opacity: 1;
       pointer-events: auto;
     }
@@ -145,6 +158,10 @@
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: transform 0.4s, opacity 1s;
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -168,6 +185,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: color 0.2s;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
