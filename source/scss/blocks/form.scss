@@ -43,6 +43,19 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  animation: fieldAnimation ease 1s;
+
+  @keyframes fieldAnimation {
+    0% {
+      transform: scaleX(0);
+      transform-origin: center right;
+    }
+
+    100% {
+      transform: scaleX(1);
+      transform-origin: center right;
+    }
+  }
 
   &:focus {
     border: 1px solid $c-purple;
