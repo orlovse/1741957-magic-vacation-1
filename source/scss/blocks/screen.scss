@@ -19,6 +19,29 @@
   }
 }
 
+.screen--story-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $c-dark;
+  transform: translateY(100%);
+  z-index: -1;
+}
+
+.from-story-to-prize .screen--story-transition {
+  animation: transitionScreen 1s;
+
+  @keyframes transitionScreen {
+    to {
+      z-index: 10;
+      transform: translateY(0);
+    }
+  }
+
+}
+
 .screen__wrapper {
   @include container;
   position: relative;
