@@ -144,21 +144,13 @@
     font-size: 1.2rem;
   }
 
-  &::before {
-    content: counter(li);
-    counter-increment: li;
+  .rules__circle-text,
+  .rules__circle {
     position: absolute;
     top: 0;
     left: 0;
     width: 4.5rem;
     height: 4.5rem;
-    font-family: $font-alt;
-    font-weight: 400;
-    font-size: 2.4rem;
-    background-color: $c-purple;
-    border-radius: 50%;
-    line-height: 5rem;
-    text-align: center;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -177,6 +169,21 @@
     }
   }
 
+  .rules__circle {
+    background-color: $c-purple;
+    border-radius: 50%;
+    transform: scale(0);
+  }
+
+  .rules__circle-text {
+    font-family: $font-alt;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 5rem;
+    text-align: center;
+    opacity: 0;
+  }
+
   p {
     margin: 0;
     transform: translateX(40px);
@@ -190,8 +197,17 @@
 
 @for $i from 1 through 4 {
   .rules__item:nth-child(#{$i}) {
-    &::before {
-      transform: scale(0);
+    .rules__circle-text {
+      animation: rulesCircleText 1s forwards 0.5s;
+
+      @keyframes rulesCircleText {
+        to {
+          opacity: 1;
+        }
+      }
+    }
+
+    .rules__circle {
       animation: rulesCircleAnimation cubic-bezier(.41, .28, .13, 1.5) 0.5s forwards;
       animation-delay: #{$i * 0.2}s;
 
@@ -213,7 +229,6 @@
         }
       }
     }
-
   }
 }
 
@@ -227,7 +242,7 @@
 
   @keyframes rulesLink {
     to {
-      width: 140px;
+      width: 18rem;
     }
   }
 
