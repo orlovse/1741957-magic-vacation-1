@@ -50,7 +50,7 @@ export default class FullPageScroll {
 
   changeVisibilityDisplay() {
     let fromStoryToPrize = false;
-    this.screenElements.forEach(async (screen) => {
+    this.screenElements.forEach((screen) => {
       if (
         screen.classList.contains(`screen--story`) &&
         screen.classList.contains(`active`)
