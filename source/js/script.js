@@ -68,3 +68,23 @@ const animationStoryTitle = new AnimateLetters(
 setTimeout(() => {
   animationStoryTitle.runAnimation();
 }, 500);
+
+const animationRulesTitle = new AnimateLetters(
+  `.rules__title`,
+  500,
+  `active`,
+  `transform`
+);
+setTimeout(() => {
+  animationRulesTitle.runAnimation();
+}, 500);
+
+const animationGameTitle = new AnimateLetters(
+  `.game__title`,
+  500,
+  `active`,
+  `transform`
+);
+setTimeout(() => {
+  animationGameTitle.runAnimation();
+}, 500);
