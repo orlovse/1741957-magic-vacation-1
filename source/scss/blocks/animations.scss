@@ -1,0 +1,14 @@
+.text__word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.text__word>span {
+  transform: translate3d(0, 100%, 0);
+  display: inline-block;
+  padding-top: 2rem;
+}
+
+.active>.text__word>span {
+  transform: translate3d(0, 0, 0);
+}
