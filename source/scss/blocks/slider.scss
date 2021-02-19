@@ -194,6 +194,14 @@
     border: 2px solid $c-light;
     border-radius: 50%;
     z-index: -1;
+    opacity: 0;
+    animation: sliderControlOpacity 1s forwards;
+
+    @keyframes sliderControlOpacity {
+      to {
+        opacity: 1;
+      }
+    }
   }
 
   svg {
@@ -243,6 +251,28 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  &--prev {
+    transform: translateX(-100%) rotateZ(-180deg);
+    animation: sliderControlPrev 1s forwards;
+
+    @keyframes sliderControlPrev {
+      to {
+        transform: translateX(0) rotateZ(0);
+      }
+    }
+  }
+
+  &--next {
+    transform: translateX(100%) rotateZ(180deg);
+    animation: sliderControlNext 1s forwards;
+
+    @keyframes sliderControlNext {
+      to {
+        transform: translateX(0) rotateZ(0);
+      }
+    }
+  }
 }
 
 .slider__pagination.swiper-pagination {
@@ -257,6 +287,14 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  opacity: 0;
+  animation: paginationAnimation 1s forwards;
+
+  @keyframes paginationAnimation {
+    to {
+      opacity: 1;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
