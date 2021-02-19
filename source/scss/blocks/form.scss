@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .form__label {
@@ -32,9 +33,9 @@
 .form__field {
   flex: none;
   margin-right: 3rem;
+  width: calc(100% - 31rem);
   padding: 0 5.6rem;
   height: 6rem;
-  width: calc(100% - 21rem);
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -43,19 +44,6 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  animation: fieldAnimation ease 1s;
-
-  @keyframes fieldAnimation {
-    0% {
-      transform: scaleX(0);
-      transform-origin: center right;
-    }
-
-    100% {
-      transform: scaleX(1);
-      transform-origin: center right;
-    }
-  }
 
   &:focus {
     border: 1px solid $c-purple;
@@ -140,7 +128,23 @@
 
 .form--result {
   .form__field {
-    width: calc(100% - 31rem);
+    &::placeholder {
+      color: #5f458c;
+      opacity: 0.4;
+    }
+
+    width: 0;
+    padding: 0;
+    animation: showInput .6s 1s forwards;
+
+    @keyframes showInput {
+      to {
+        width: calc(100% - 31rem);
+        padding: 0 5.6rem;
+      }
+    }
+
+
 
     @media (min-width: $stop-scaling) {
       width: calc(100% - 310px);
@@ -158,4 +162,27 @@
       width: calc(100% - 5rem);
     }
   }
+
+  .form__button {
+    padding: 1.5rem 5rem;
+    flex-grow: 0;
+    opacity: 0;
+
+    color: transparent;
+    animation: showBtn .5s 0.5s forwards,
+      showBtnText .5s 0.7s forwards;
+
+    @keyframes showBtn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes showBtnText {
+      to {
+        color: #5f458c;
+      }
+    }
+  }
+
 }
