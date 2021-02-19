@@ -71,7 +71,7 @@
   z-index: 1;
   opacity: 0;
   transform: translateY(100%);
-  transition: transform cubic-bezier(.45, .51, .01, .9) 0.5s, opacity cubic-bezier(.45, .51, .01, .9) 0.5s;
+  transition: transform cubic-bezier(.45, .51, .01, .9) 0.5s, opacity cubic-bezier(.45, .51, .01, .9) 0.5s, height cubic-bezier(.45, .51, .01, .9) 1s, width cubic-bezier(.45, .51, .01, .9) 1s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -105,6 +105,7 @@
 
 .screen__footer-wrapper {
   @include container;
+  transition: opacity 1s 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     opacity: 0;
@@ -238,6 +239,14 @@
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.2;
+  opacity: 0;
+  animation: footerOpacity 1s forwards;
+
+  @keyframes footerOpacity {
+    to {
+      opacity: 1;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     padding: 8px 0;

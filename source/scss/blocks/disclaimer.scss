@@ -2,6 +2,18 @@
   color: $c-dark;
   background-color: $c-light;
 
+  ul {
+    opacity: 0;
+    animation: disclaimerOpacity 1s forwards;
+
+    @keyframes disclaimerOpacity {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+
   @media (max-width: $tablet) and (orientation: portrait) {
     font-weight: 400;
     color: $c-light;
