@@ -69,6 +69,7 @@ export default class FullPageScroll {
     });
     if (fromStoryToPrize) {
       setTimeout(() => {
+        document.body.classList.remove("slide2", "slide3", "slide4");
         this.screenElements[this.activeScreen].classList.remove(
           `screen--hidden`
         );
