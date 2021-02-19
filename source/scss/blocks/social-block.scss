@@ -266,3 +266,76 @@
     }
   }
 }
+
+
+body.slide2 {
+  .social-block__toggler {
+    color: $c-blue;
+
+    &:active:focus::before {
+      border-color: $c-light-blue;
+      background-color: $c-light-blue;
+    }
+
+    &:focus::before {
+      color: $c-light-blue;
+      border-color: $c-light-blue;
+    }
+  }
+
+  .social-block__link:hover,
+  .social-block__link:focus,
+  .social-block__link:active,
+  .social-block__link:active:focus {
+    color: $c-light-blue;
+  }
+
+
+}
+
+body.slide3 {
+  .social-block__toggler {
+    color: $c-light-blue;
+
+    &:active:focus::before {
+      border-color: $c-blue;
+      background-color: $c-blue;
+    }
+
+    &:focus::before {
+      color: $c-blue;
+      border-color: $c-blue;
+    }
+  }
+
+  .social-block__link:hover,
+  .social-block__link:focus,
+  .social-block__link:active,
+  .social-block__link:active:focus {
+    color: $c-blue
+  }
+}
+
+body.slide4 {
+  .social-block__toggler {
+    color: $c-dark;
+
+    &:active:focus::before {
+      border-color: $c-purple;
+      background-color: $c-purple;
+    }
+
+    &:focus::before {
+      color: $c-purple;
+      border-color: $c-purple;
+    }
+  }
+
+  .social-block__link:hover,
+  .social-block__link:focus,
+  .social-block__link:active,
+  .social-block__link:active:focus {
+    color: $c-purple;
+  }
+
+}
