@@ -83,6 +83,16 @@ export default class FullPageScroll {
         this.screenElements[this.activeScreen].classList.add(`active`);
       }, 100);
     }
+    //Load svg on prizes page
+    if (
+      this.screenElements[this.activeScreen].classList.contains(
+        "screen--prizes"
+      )
+    ) {
+      document
+        .querySelector(".screen--prizes .prize-1")
+        .setAttribute(`src`, `img/prize-1.svg`);
+    }
   }
 
   changeActiveMenuItem() {
