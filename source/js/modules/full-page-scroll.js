@@ -92,6 +92,9 @@ export default class FullPageScroll {
       document
         .querySelector(".screen--prizes .prize-1")
         .setAttribute(`src`, `img/prize-1.svg`);
+      document
+        .querySelector(".screen--prizes .prize-2")
+        .setAttribute(`src`, `img/prize-2.svg`);
     }
   }
 
