@@ -66,7 +66,55 @@
     height: 100%;
     stroke-width: 0.2rem;
     stroke-linejoin: round;
+    overflow: visible;
   }
+
+  .svg-win {
+    animation: scaleText 0.5s linear forwards;
+    transform: scale(1.2);
+    transform-origin: center center;
+  }
+
+  @keyframes scaleText {
+    to {
+      transform: scale(1)
+    }
+  }
+
+  .svg-win path {
+    stroke-dasharray: 790;
+    stroke-dashoffset: 790;
+    animation: dash 0.5s linear alternate forwards;
+  }
+
+  @for $i from 1 through 9 {
+    .svg-lose path:nth-child(#{$i}) {
+      transform: translateY(0);
+      stroke-dasharray: 790;
+      stroke-dashoffset: 790;
+      animation: loseTextAnomation cubic-bezier(.76, .53, .41, 1.38) 0.5s forwards calc(#{$i} * 50ms),
+      dash 0.5s linear alternate forwards calc(#{$i} * 50ms);
+
+      @keyframes loseTextAnomation {
+        to {
+          transform: translateY(8rem);
+        }
+      }
+    }
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dasharray: 0 395;
+      stroke-dashoffset: 195;
+    }
+
+    to {
+      stroke-dasharray: 395 0;
+      stroke-dashoffset: 395;
+    }
+  }
+
 }
 
 .result__text {
