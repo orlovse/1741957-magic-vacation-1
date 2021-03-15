@@ -1,4 +1,5 @@
 import throttle from "lodash/throttle";
+import { animateTimer } from "./timer";
 
 export default class FullPageScroll {
   constructor() {
@@ -83,6 +84,21 @@ export default class FullPageScroll {
         this.screenElements[this.activeScreen].classList.add(`active`);
       }, 100);
     }
+
+    //load timer animation
+    if (
+      this.screenElements[this.activeScreen].classList.contains(`screen--game`)
+    ) {
+      const timerDuration = 5 * 60 * 1000;
+      const timerElementSec = document.querySelector(
+        ".game__counter span:nth-child(2)"
+      );
+      const timerElementMin = document.querySelector(
+        ".game__counter span:nth-child(1)"
+      );
+      animateTimer(timerDuration, timerElementSec, timerElementMin);
+    }
+
     //Load svg on prizes page
     if (
       this.screenElements[this.activeScreen].classList.contains(
