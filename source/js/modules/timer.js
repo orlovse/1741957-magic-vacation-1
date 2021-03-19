@@ -32,3 +32,31 @@ export const animateTimer = (duration, timerElementSec, timerElementMin) => {
 
   requestAnimationFrame(calcTime);
 };
+
+export const animateNumbers = (timer, selector, startNumber, endNumber, options) => {
+  const element = document.querySelector(selector);
+  let nextNumber = startNumber;
+  let counter = 0;
+  let timeBetweenNumbers;
+  if (options) {
+    timeBetweenNumbers = timer / options.length;
+  } else {
+    timeBetweenNumbers = timer / (endNumber - startNumber);
+  }
+  const start = () => {
+    element.innerText = nextNumber;
+    if (options) {
+      nextNumber = options[counter];
+      counter++;
+    } else {
+      nextNumber++;
+    }
+    if (nextNumber <= endNumber) {
+      setTimeout(() => {
+        requestAnimationFrame(start);
+      }, timeBetweenNumbers);
+    }
+  };
+  requestAnimationFrame(start);
+};
+
