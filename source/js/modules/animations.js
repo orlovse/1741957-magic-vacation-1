@@ -26,8 +26,8 @@ export class AnimateLetters {
     }
     const text = this._element.textContent
       .trim()
-      .split(" ")
-      .filter((latter) => latter !== "");
+      .split(` `)
+      .filter((latter) => latter !== ``);
 
     let wordsTimeOffset = 0;
     const content = text.reduce((fragmentParent, word) => {
